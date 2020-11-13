@@ -1,0 +1,9 @@
+.btn{
+	height: 50px;
+	width: 200px;
+}
+
+.wrapper{
+	display: flex;
+	justify-contect: center;
+}
