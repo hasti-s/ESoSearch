@@ -1,9 +1,53 @@
 .btn{
-	height: 50px;
+	height: 40px;
 	width: 200px;
 }
 
 .wrapper{
 	display: flex;
-	justify-contect: center;
+  	justify-content: center;
+	margin-top: 10%;
+	align-items: center;
 }
+
+#search-query{
+	width: 100%;
+	height: 50px;
+	display: block;
+	border-radius: 10px;
+	border-color: #DCDCDC;
+	border-style: solid;
+	padding-left: 10px;
+
+}
+
+#search-bar{
+	/*display: flex;*/
+	width: 500px;
+  	justify-content: center;
+}
+
+.wrapper-but{
+	display: flex;
+  	justify-content: space-between;
+	margin-top: 20px;
+	
+}
+
+.wrapper-voice{
+	display: flex;
+  	justify-content: center;
+	margin-top: 1%;
+	align-items: center;
+	
+}
+
+#mic-on{
+	font-size: 100px;
+	color: #696969;
+}
+
+#voice-search{
+	width: 100%;
+}
+
