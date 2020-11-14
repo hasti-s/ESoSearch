@@ -22,8 +22,8 @@
 
 	    	<div class="wrapper-but">
 
-		    	<button type="button" class="btn btn-primary" name="Our Suggestions">Our Suggestions</button>
-				<button type="button" class="btn btn-primary" name="Search">Search</button>
+		    	<button type="button" class="btn btn-primary" name="suggestions" id="suggestions-but">Our Suggestions</button>
+				<button type="button" class="btn btn-primary" name="search" id="search-but">Search</button>
 			</div>
 	    </form>
     </div>
@@ -41,7 +41,33 @@
 </body>
 
 <script>
-    
+    $("#search-query").click(function() {
+        $("#search-query").css("border-color", "#DCDCDC");
+        $("#error-query").remove();
+    });
+    $("#suggestions-but").click(function() {
+        window.location.href = "./Suggestions.html";
+    });
+
+    $("#search-but").click(function() {
+        var query = $("#search-query").val();
+        if(query.length > 0)
+            window.location.href = "./Results.html";
+        else{
+            $("#search-bar").prepend("<p id='error-query' style='color:red;'>Please write something in this field</p>");
+            $("#search-query").css("border-color", "red");
+        }
+    });
+
+    $("#mic-on").hover(function() {
+        document.body.style.cursor = "pointer";
+    });
+    $("#mic-on").mouseleave(function() {
+        document.body.style.cursor = "auto";
+    });
+    $("#mic-on").click(function() {
+        window.location.href = "./VoiceSearch.html";
+    });
 </script>
 
 </html>
