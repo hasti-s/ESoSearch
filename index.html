@@ -33,7 +33,7 @@
     <div class="wrapper-voice">
     	
     
-    		<i class="fa fa-microphone" id="mic-on"></i>
+    		<i class="fa fa-microphone" id="mic"></i>
     		
     	</div>
     	<div class="wrapper-voice"><label>Tap to Speak</label></div>
@@ -59,13 +59,13 @@
         }
     });
 
-    $("#mic-on").hover(function() {
+    $("#mic").hover(function() {
         document.body.style.cursor = "pointer";
     });
-    $("#mic-on").mouseleave(function() {
+    $("#mic").mouseleave(function() {
         document.body.style.cursor = "auto";
     });
-    $("#mic-on").click(function() {
+    $("#mic").click(function() {
         window.location.href = "./VoiceSearch.html";
     });
 </script>

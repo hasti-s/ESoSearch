@@ -21,6 +21,19 @@
 
 }
 
+#voice-query{
+	width: 100%;
+	height: 200px;
+	/*display: block;*/
+	border-radius: 10px;
+	border-color: #DCDCDC;
+	border-style: solid;
+	padding-left: 10px;
+	padding-top: 10px;
+	vertical-align: top;
+	line-height:40px;
+}
+
 #search-bar{
 	/*display: flex;*/
 	width: 500px;
@@ -42,7 +55,17 @@
 	
 }
 
+#mic{
+	font-size: 800%;
+	color: #696969;
+}
+
 #mic-on{
+	font-size: 800%;
+	color: DarkCyan;
+}
+
+#mic-off{
 	font-size: 800%;
 	color: #696969;
 }
