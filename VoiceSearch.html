@@ -17,12 +17,11 @@
 <div class="wrapper">
     <form id="search-bar">
 
-        <textarea  id="voice-query" name="voice-query" placeholder="Say something like Yoga, Chess, or ...">
-</textarea>
+        <textarea  id="voice-query" name="voice-query" placeholder="Say something like Yoga, Chess, or ..."></textarea>
         <div class="wrapper-voice">
 
 
-            <i class="fa fa-microphone" id="mic-off"></i>
+            <i class="fa fa-microphone" id="mic"></i>
 
         </div>
         <div class="wrapper-voice"><label id="voice-status">Tap to Speak</label></div>
@@ -33,24 +32,53 @@
 
 <script>
 
-    $("#mic-off").hover(function() {
+    var micStatus = 0;
+    $("#mic").hover(function() {
         document.body.style.cursor = "pointer";
     });
-    $("#mic-off").mouseleave(function() {
+    $("#mic").mouseleave(function() {
         document.body.style.cursor = "auto";
     });
-    $("#mic-off").click(function() {
+    $("#mic").click(function() {
+        if(micStatus == 0){//mic should turn on
         //This is where the voice plugin should start listening...
-        $("#voice-status").html("Listening ...<br>Tap to stop");
-        $("#voice-status").css("color", "DarkCyan");
-        $("#mic-off").removeAttr('id');
-        $(".fa-microphone").attr('id', 'mic-on');
+            $("#voice-status").html("Listening ...<br>Tap to stop");
+            $("#voice-status").css("color", "DarkCyan");
+            $("#mic").css("color", "DarkCyan");
+
+            micStatus = 1;
+        }
+        else {
+            $("#voice-status").html("Tap to Speak");
+            $("#voice-status").css("color", "white");
+            $("#mic").css("color", "white");
+            $("#voice-query").html('Did you say "Chess Club"?');
+            $('<button type="button" class="btn btn-secondary" name="no" id="rejection-but">No</button>').insertAfter("#voice-query");
+            $('<button type="button" class="btn btn-primary" name="yes" id="acceptance-but">Yes</button>').insertAfter("#rejection-but");
+
+            micStatus = 0;
+
+            $("#rejection-but").click(function() {
+                console.log("kmjhgvf");
+                $("#voice-status").html("Tap to Speak");
+                $("#voice-status").css("color", "#696969");
+                $("#mic").css("color", "#696969");
+                micStatus = 0;
+                removeButtons();
+            });
+            $("#acceptance-but").click(function(){
+                window.location.href = "./Results.html";
+            });
+        }
     });
 
-    $("#mic-on").click(function() {
-        $("#voice-status").html("Listening ...<br>Tap to stop");
-        $("#voice-status").css("color", "DarkCyan");
-        $("#mic-off").removeAttr('id');
-        $(".fa-microphone").attr('id', 'mic-on');
-    });
+
+
+    function removeButtons() {
+        $("#rejection-but").remove();
+        $("#acceptance-but").remove();
+        $("#voice-query").html('');
+    }
+
+
 </script>
