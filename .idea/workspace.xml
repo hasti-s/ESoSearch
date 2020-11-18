@@ -14,8 +14,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="147">
+              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="32" />
+            <state relative-caret-position="489">
+              <caret line="31" lean-forward="true" selection-end-line="36" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Suggestions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="438">
+              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -50,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+            <state relative-caret-position="489">
+              <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -71,10 +71,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Suggestions.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/VoiceSearch.html" />
         <option value="$PROJECT_DIR$/Results.html" />
+        <option value="$PROJECT_DIR$/Suggestions.html" />
         <option value="$PROJECT_DIR$/styles.css" />
       </list>
     </option>
@@ -174,12 +174,12 @@
       <updated>1605384733691</updated>
       <workItem from="1605384737243" duration="2072000" />
       <workItem from="1605556040873" duration="4967000" />
-      <workItem from="1605646485181" duration="1810000" />
+      <workItem from="1605646485181" duration="2685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8849000" />
+    <option name="totallyTimeSpent" value="9724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -220,10 +220,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Suggestions.html">
+    <entry file="file://$PROJECT_DIR$/Results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="489">
+          <caret line="31" lean-forward="true" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -236,22 +236,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="147">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Results.html">
+    <entry file="file://$PROJECT_DIR$/Suggestions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="438">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        <state relative-caret-position="489">
+          <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
         </state>
       </provider>
     </entry>
