@@ -36,12 +36,12 @@
 
 #search-bar{
 	/*display: flex;*/
-	width: 500px;
+	width: 700px;
   	justify-content: center;
 }
 
 #result-cards{
-	width: 500px;
+	width: 700px;
 	justify-content: center;
 }
 
@@ -115,4 +115,13 @@
 	margin: auto;
 	text-align: center;
 	margin-bottom: 10px;
+}
+
+.options{
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.form-check{
+	margin-left: 10px;
 }

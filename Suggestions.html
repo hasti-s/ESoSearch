@@ -37,14 +37,99 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title">Please choose:</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+
             </div>
             <div class="modal-body">
-                <p>Some text in the modal.</p>
+                <div class="options">
+                    <h6>Activity:</h6>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample1" name="activity-option">
+                        <label class="form-check-label" for="materialGroupExample1">Sports</label>
+                    </div>
+
+                    <!-- Group of material radios - option 2 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample2" name="activity-option" checked>
+                        <label class="form-check-label" for="materialGroupExample2">Music</label>
+                    </div>
+
+                    <!-- Group of material radios - option 3 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample3" name="activity-option">
+                        <label class="form-check-label" for="materialGroupExample3">Board Games</label>
+                    </div>
+
+                    <!-- Group of material radios - option 3 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample4" name="activity-option">
+                        <label class="form-check-label" for="materialGroupExample3">Educational</label>
+                    </div>
+                </div>
+                <div class="options">
+                    <!--///////////-->
+                    <h6>Type:</h6>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample1" name="type-option">
+                        <label class="form-check-label" for="materialGroupExample1">Online</label>
+                    </div>
+
+                    <!-- Group of material radios - option 2 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample2" name="type-option" checked>
+                        <label class="form-check-label" for="materialGroupExample2">In-person</label>
+                    </div>
+                </div>
+
+                <!--///////////-->
+                <div class="options">
+                    <h6>Location:</h6>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample1" name="location-option">
+                        <label class="form-check-label" for="materialGroupExample1">My Area</label>
+                    </div>
+
+                    <!-- Group of material radios - option 2 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample2" name="location-option" checked>
+                        <label class="form-check-label" for="materialGroupExample2">Anywhere</label>
+                    </div>
+                </div>
+                <!--//////////////-->
+                <div class="options">
+                    <h6>Age Group:</h6>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample1" name="age-option">
+                        <label class="form-check-label" for="materialGroupExample1">Seniors</label>
+                    </div>
+
+                    <!-- Group of material radios - option 2 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample2" name="age-option" checked>
+                        <label class="form-check-label" for="materialGroupExample2">Adults</label>
+                    </div>
+
+                    <!-- Group of material radios - option 3 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample3" name="age-option">
+                        <label class="form-check-label" for="materialGroupExample3">Kids</label>
+                    </div>
+
+                    <!-- Group of material radios - option 3 -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="materialGroupExample4" name="age-options">
+                        <label class="form-check-label" for="materialGroupExample4">Any</label>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="modal-footer wrapper">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                <div class="wrapper-but">
+
+                    <button type="button" class="btn btn-secondary" name="suggestions" id="cancel-but" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" name="search" id="search-but">Search</button>
+                </div>
             </div>
         </div>
 
@@ -62,7 +147,10 @@
     $(".result-card").mouseleave(function(){
         $(this).css("box-shadow", "0 4px 8px 0 rgba(0, 0, 0, 0.2)");
     });
-    
+
+    $("#search-but").click(function(){
+        window.location.href = "./Results.html";
+    });
     // $("#customize-but").click(function () {
     //
     // });
