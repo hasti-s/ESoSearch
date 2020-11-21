@@ -14,7 +14,11 @@
 <body>
 <div class="wrapper">
     <div id="result-cards">
-        <label id="query-results">Results for "Senior Swimming Class"</label>
+        <label id="query-results">Results for</label>
+        <div class="search-results">
+            <input type="text" id="search-query" name="search-query" placeholder="Type something like Yoga, Chess, or ..." value="Senior Swimming Class">
+            <button type="button" class="btn btn-primary" name="search" id="change-but">Change</button>
+        </div>
         <div class="result-card">1....</div>
         <div class="result-card">2....</div>
         <div class="result-card">3....</div>
@@ -32,6 +36,13 @@
 
     $(".result-card").mouseleave(function(){
         $(this).css("box-shadow", "0 4px 8px 0 rgba(0, 0, 0, 0.2)");
+    });
+
+    $("#change-but").click(function() {
+        var query = $("#search-query").val();//to be used later as the search query
+
+        window.location.href = "./Results.html";
+
     });
 
 </script>
