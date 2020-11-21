@@ -16,7 +16,7 @@
 
 <div class="wrapper">
     <form id="search-bar">
-
+        <label id="did-you-say">Is this what you said?</label>
         <textarea  id="voice-query" name="voice-query" placeholder="Say something like Yoga, Chess, or ..."></textarea>
         <div class="wrapper-voice">
 
@@ -33,6 +33,7 @@
 <script>
 
     var micStatus = 0;
+    $("#did-you-say").hide();
     $("#mic").hover(function() {
         document.body.style.cursor = "pointer";
     });
@@ -45,6 +46,7 @@
             $("#voice-status").html("Listening ...<br>Tap to stop");
             $("#voice-status").css("color", "DarkCyan");
             $("#mic").css("color", "DarkCyan");
+            $("#did-you-say").hide();
 
             micStatus = 1;
         }
@@ -52,7 +54,8 @@
             $("#voice-status").html("Tap to Speak");
             $("#voice-status").css("color", "white");
             $("#mic").css("color", "white");
-            $("#voice-query").html('Did you say "Chess Club"?');
+            $("#did-you-say").show();
+            $("#voice-query").html('Chess Club');//--------------------> replace with actual query <--------------------
             $('<button type="button" class="btn btn-secondary" name="no" id="rejection-but">No</button>').insertAfter("#voice-query");
             $('<button type="button" class="btn btn-primary" name="yes" id="acceptance-but">Yes</button>').insertAfter("#rejection-but");
 
@@ -64,10 +67,12 @@
                 $("#voice-status").css("color", "#696969");
                 $("#mic").css("color", "#696969");
                 micStatus = 0;
+                $("#did-you-say").hide();
                 $("#voice-query").html("");
                 removeButtons();
             });
             $("#acceptance-but").click(function(){
+                $("#did-you-say").hide();
                 window.location.href = "./Results.html";
             });
         }
