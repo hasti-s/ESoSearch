@@ -54,7 +54,7 @@
     $("#search-but").click(function() {
         var query = $("#search-query").val();
         if(query.length > 0)
-            window.location.href = "./Results.html";
+            window.location.href = "./Results.html?query=" + query;
         else{
             $("#search-bar").prepend("<p id='error-query' style='color:red;'>Please write something in this field</p>");
             $("#search-query").css("border-color", "red");
