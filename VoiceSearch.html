@@ -82,11 +82,9 @@
         }
         recognition.addEventListener("start", startSpeechRecognition);
         function startSpeechRecognition() {
-            console.log("Speech recognition active");
         }
         recognition.addEventListener("end", endSpeechRecognition);
         function endSpeechRecognition() {
-            console.log("Speech recognition inactive");
         }
         
         recognition.addEventListener("result", resultOfSpeechRecognition);
