@@ -34,8 +34,10 @@
 </html>
 
 <script>
-
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
     var micStatus = 0;
+    let transcript = '';
     $("#did-you-say").hide();
     $("#mic").hover(function() {
         document.body.style.cursor = "pointer";
@@ -44,8 +46,8 @@
         document.body.style.cursor = "auto";
     });
     $("#mic").click(function() {
-        if(micStatus == 0){//mic should turn on
-        //This is where the voice plugin should start listening...
+        if(micStatus == 0){
+            recognition.start();
             $("#voice-status").html("Listening ...<br>Tap to stop");
             $("#voice-status").css("color", "DarkCyan");
             $("#mic").css("color", "DarkCyan");
@@ -54,18 +56,17 @@
             micStatus = 1;
         }
         else {
+            recognition.stop();
             $("#voice-status").html("Tap to Speak");
             $("#voice-status").css("color", "white");
             $("#mic").css("color", "white");
             $("#did-you-say").show();
-            $("#voice-query").html('Chess Club');//--------------------> replace with actual query <--------------------
             $('<button type="button" class="btn btn-secondary" name="no" id="rejection-but">No</button>').insertAfter("#voice-query");
             $('<button type="button" class="btn btn-primary" name="yes" id="acceptance-but">Yes</button>').insertAfter("#rejection-but");
 
             micStatus = 0;
 
             $("#rejection-but").click(function() {
-                console.log("kmjhgvf");
                 $("#voice-status").html("Tap to Speak");
                 $("#voice-status").css("color", "#696969");
                 $("#mic").css("color", "#696969");
@@ -76,9 +77,24 @@
             });
             $("#acceptance-but").click(function(){
                 $("#did-you-say").hide();
-                window.location.href = "./Results.html";
+                window.location.href = "./Results.html?query=" + transcript;
             });
         }
+        recognition.addEventListener("start", startSpeechRecognition);
+        function startSpeechRecognition() {
+            console.log("Speech recognition active");
+        }
+        recognition.addEventListener("end", endSpeechRecognition);
+        function endSpeechRecognition() {
+            console.log("Speech recognition inactive");
+        }
+        
+        recognition.addEventListener("result", resultOfSpeechRecognition);
+        function resultOfSpeechRecognition(event) {
+            transcript = event.results[0][0].transcript;
+            $("#voice-query").html(transcript);
+        }
+
     });
 
 

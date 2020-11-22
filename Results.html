@@ -32,7 +32,11 @@
 </html>
 
 <script>
-
+    var currentURL = window.location.href;
+    let paramString = currentURL.split('?')[1]; 
+    let queryString = new URLSearchParams(paramString); 
+    searchQuery = queryString.getAll("query");
+    document.getElementById("search-query-results").value = searchQuery[0];
     $(".result-card").hover(function(){
         $(this).css("box-shadow", "0 6px 20px 0 rgba(0, 0, 0, 0.19)");
     });
