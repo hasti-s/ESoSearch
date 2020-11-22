@@ -20,7 +20,7 @@
         <label id="query-results">Results for</label>
         <div class="search-results">
             <input type="text" id="search-query-results" name="search-query" placeholder="Type something like Yoga, Chess, or ..." value="Senior Swimming Class">
-            <button type="button" class="btn btn-primary" name="search" id="change-but">Change</button>
+            <button type="button" class="btn btn-primary" name="search" id="change-but">Search</button>
         </div>
         <div class="result-card">1....</div>
         <div class="result-card">2....</div>
@@ -46,9 +46,8 @@
     });
 
     $("#change-but").click(function() {
-        var query = $("#search-query").val();//to be used later as the search query
-
-        window.location.href = "./Results.html";
+        var query = document.getElementById("search-query-results").value;
+        window.location.href = "./Results.html?query=" + query;
 
     });
 
