@@ -47,6 +47,7 @@
     });
     $("#mic").click(function() {
         if(micStatus == 0){
+            // Start listening when the user presses on the mic icon
             recognition.start();
             $("#voice-status").html("Listening ...<br>Tap to stop");
             $("#voice-status").css("color", "DarkCyan");
@@ -56,6 +57,7 @@
             micStatus = 1;
         }
         else {
+            // Stop listening when the user presses on the mic again
             recognition.stop();
             $("#voice-status").html("Tap to Speak");
             $("#voice-status").css("color", "white");
@@ -77,16 +79,21 @@
             });
             $("#acceptance-but").click(function(){
                 $("#did-you-say").hide();
+                // Pass the query to the results page
                 window.location.href = "./Results.html?query=" + transcript;
             });
         }
+        // Eventlistener to start listening the user query
         recognition.addEventListener("start", startSpeechRecognition);
         function startSpeechRecognition() {
         }
+
+        // Eventlistener to stop listening the user query
         recognition.addEventListener("end", endSpeechRecognition);
         function endSpeechRecognition() {
         }
         
+        // Eventlistener to get the transcribed transcript from user's voice query
         recognition.addEventListener("result", resultOfSpeechRecognition);
         function resultOfSpeechRecognition(event) {
             transcript = event.results[0][0].transcript;

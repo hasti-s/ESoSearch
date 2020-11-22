@@ -32,10 +32,14 @@
 </html>
 
 <script>
+    // Get the current URL
     var currentURL = window.location.href;
     let paramString = currentURL.split('?')[1]; 
     let queryString = new URLSearchParams(paramString); 
+
+    // Get the value of parameter key - query
     searchQuery = queryString.getAll("query");
+    // Set the value of input search query results textbox to the user's query
     document.getElementById("search-query-results").value = searchQuery[0];
     $(".result-card").hover(function(){
         $(this).css("box-shadow", "0 6px 20px 0 rgba(0, 0, 0, 0.19)");
