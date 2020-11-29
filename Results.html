@@ -40,6 +40,19 @@
     // Get the value of parameter key - query
     searchQuery = queryString.getAll("query");
     // Set the value of input search query results textbox to the user's query
+
+    const getData = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://api.eventful.com/json/events/search?...&keywords=walking&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS');
+        xhr.responseType = 'json';
+        xhr.onload = (response) => {
+            const data = xhr.response;
+            console.log(data);
+        };
+        xhr.send();
+    };
+
+    getData();
     document.getElementById("search-query-results").value = searchQuery[0];
     $(".result-card").hover(function(){
         $(this).css("box-shadow", "0 6px 20px 0 rgba(0, 0, 0, 0.19)");
@@ -54,5 +67,7 @@
         window.location.href = "./Results.html?query=" + query;
 
     });
+
+    
 
 </script>
