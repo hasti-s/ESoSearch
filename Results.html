@@ -43,11 +43,12 @@
 
     const getData = () => {
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://api.eventful.com/json/events/search?...&keywords=walking&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS');
+        xhr.open('GET', 'http://api.eventful.com/json/events/search?&keywords=walking&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS');
         xhr.responseType = 'json';
         xhr.onload = (response) => {
             const data = xhr.response;
-            console.log(data);
+            var events = data['events'];
+            console.log(events);
         };
         xhr.send();
     };
