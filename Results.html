@@ -36,6 +36,7 @@
     var currentURL = window.location.href;
     let paramString = currentURL.split('?')[1]; 
     let queryString = new URLSearchParams(paramString); 
+    var events;
 
     // Get the value of parameter key - query
     searchQuery = queryString.getAll("query");
@@ -47,8 +48,14 @@
         xhr.responseType = 'json';
         xhr.onload = (response) => {
             const data = xhr.response;
-            var events = data['events']['event'];
-            console.log(events);
+            events = data['events']['event'];
+            // console.log(events);
+
+            for (var i in events) {
+                console.log(events[i]['title']);
+                console.log(events[i]['description']);
+                console.log(events[i]['url']);
+            }
         };
         xhr.send();
     };
