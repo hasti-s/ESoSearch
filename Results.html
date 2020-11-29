@@ -47,7 +47,7 @@
         xhr.responseType = 'json';
         xhr.onload = (response) => {
             const data = xhr.response;
-            var events = data['events'];
+            var events = data['events']['event'];
             console.log(events);
         };
         xhr.send();
