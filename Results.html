@@ -22,10 +22,22 @@
             <input type="text" id="search-query-results" name="search-query" placeholder="Type something like Yoga, Chess, or ..." value="Senior Swimming Class">
             <button type="button" class="btn btn-primary" name="search" id="change-but">Search</button>
         </div>
-        <div class="result-card">1....</div>
-        <div class="result-card">2....</div>
-        <div class="result-card">3....</div>
-        <div class="result-card">4....</div>
+        <div class="result-card" id="result0">
+          <h4 class="title">Title</h4>
+          <p class="description"><Description/p>
+        </div>
+        <div class="result-card" id="result1">
+          <h4 class="title">Title</h4>
+          <p class="description"><Description/p>
+        </div>
+        <div class="result-card" id="result2">
+          <h4 class="title">Title</h4>
+          <p class="description"><Description/p>
+        </div>
+        <div class="result-card" id="result3">
+          <h4 class="title">Title</h4>
+          <p class="description"><Description/p>
+        </div>
     </div>
 </div>
 </body>
@@ -34,8 +46,8 @@
 <script>
     // Get the current URL
     var currentURL = window.location.href;
-    let paramString = currentURL.split('?')[1]; 
-    let queryString = new URLSearchParams(paramString); 
+    let paramString = currentURL.split('?')[1];
+    let queryString = new URLSearchParams(paramString);
     var events;
 
     // Get the value of parameter key - query
@@ -52,13 +64,22 @@
             // console.log(events);
 
             for (var i in events) {
-                console.log(events[i]['title']);
-                console.log(events[i]['description']);
-                console.log(events[i]['url']);
+              card_elements = document.getElementById("result"+i).children;
+              card_elements[0].innerHTML = events[i]['title'];
+              card_elements[1].innerHTML = events[i]['description'];
+              console.log(events[i]['title']);
+              console.log(events[i]['description']);
+              console.log(events[i]['url']);
+
+              $(".result-card").click(function() {
+                  window.open(events[i]['url']);
+
+              });
             }
         };
         xhr.send();
     };
+
 
     getData();
     document.getElementById("search-query-results").value = searchQuery[0];
@@ -76,6 +97,6 @@
 
     });
 
-    
+
 
 </script>

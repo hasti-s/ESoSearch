@@ -70,6 +70,18 @@
 
     }
 
+    .description{
+  		width: auto;
+  		text-overflow: ellipsis;
+  		white-space: normal;
+  		overflow: hidden;"
+  	}
+
+    .title{
+      padding-bottom : inherit;
+    }
+
+
     #mic{
         font-size: 800%;
         color: #696969;
@@ -91,7 +103,7 @@
 
     .result-card{
         width: 100%;
-        height: 100px;
+        height: auto;
         border-radius: 30px;
         border-color: #DCDCDC;
         background-color: ghostwhite;
