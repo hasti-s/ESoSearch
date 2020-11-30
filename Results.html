@@ -38,6 +38,24 @@
           <h4 class="title">Title</h4>
           <p class="description"><Description/p>
         </div>
+
+        <button type="button" class="btn btn-primary" name="show-more" id="show-more" onclick="showMore()">Show More</button>
+
+        <div class="more" id="more" style="display: none">
+          <div class="result-card" id="result4">
+            <h4 class="title">Title</h4>
+            <p class="description"><Description/p>
+          </div>
+          <div class="result-card" id="result5">
+            <h4 class="title">Title</h4>
+            <p class="description"><Description/p>
+          </div>
+          <div class="result-card" id="result6">
+            <h4 class="title">Title</h4>
+            <p class="description"><Description/p>
+          </div>
+        </div>
+
     </div>
 </div>
 </body>
@@ -66,9 +84,9 @@
         xhr.onload = (response) => {
             const data = xhr.response;
             events = data['events']['event'];
-            // console.log(events);
+            console.log(events);
             for (var i in events) {
-              console.log(events[i]['description']);
+              //console.log(events[i]['description']);
               if(events[i]['description'] == null){
                 events[i]['description'] = "No Description Available. Click on this event to see more details";
               }
@@ -88,6 +106,11 @@
         xhr.send();
     };
 
+    function showMore() {
+      var moreResults = document.getElementById("more");
+      moreResults.style.display = "block";
+      document.getElementById("show-more").style.display = "none";
+    }
 
     getData();
     document.getElementById("search-query-results").value = searchQuery[0];
