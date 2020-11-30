@@ -76,6 +76,8 @@
 
 	.description{
 		width: auto;
+		height: 4.5em;
+		line-height: 1.5em;
 		text-overflow: ellipsis;
 		white-space: normal;
 		overflow: hidden;
