@@ -53,10 +53,15 @@
     // Get the value of parameter key - query
     searchQuery = queryString.getAll("query");
     // Set the value of input search query results textbox to the user's query
+    console.log(searchQuery);
+
+    //split the query words for api call
+    apiQueryString = searchQuery[0].split(' ').join('+');
 
     const getData = () => {
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://api.eventful.com/json/events/search?&keywords=walking&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS');
+        apiString = 'http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS' ;
+        xhr.open('GET', apiString);
         xhr.responseType = 'json';
         xhr.onload = (response) => {
             const data = xhr.response;
@@ -67,9 +72,9 @@
               card_elements = document.getElementById("result"+i).children;
               card_elements[0].innerHTML = events[i]['title'];
               card_elements[1].innerHTML = events[i]['description'];
-              console.log(events[i]['title']);
-              console.log(events[i]['description']);
-              console.log(events[i]['url']);
+              //console.log(events[i]['title']);
+              //console.log(events[i]['description']);
+              //console.log(events[i]['url']);
 
               $(".result-card").click(function() {
                   window.open(events[i]['url']);
