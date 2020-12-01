@@ -38,9 +38,6 @@
           <h4 class="title">Title</h4>
           <p class="description"><Description/p>
         </div>
-
-        <button type="button" class="btn btn-primary" name="show-more" id="show-more" onclick="showMore()">Show More</button>
-
         <div class="more" id="more" style="display: none">
           <div class="result-card" id="result4">
             <h4 class="title">Title</h4>
@@ -54,6 +51,9 @@
             <h4 class="title">Title</h4>
             <p class="description"><Description/p>
           </div>
+        </div>
+        <div style="text-align: center;">
+          <button type="button" class="btn btn-primary" name="show-more" id="show-more" onclick="showMore()">Show More</button>
         </div>
 
     </div>
@@ -109,7 +109,6 @@
     function showMore() {
       var moreResults = document.getElementById("more");
       moreResults.style.display = "block";
-      document.getElementById("show-more").style.display = "none";
     }
 
     getData();
