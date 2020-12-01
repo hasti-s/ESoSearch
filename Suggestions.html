@@ -194,19 +194,11 @@
 </html>
 
 <script>
+    var userLocation = {
+        "userLatitude": 0.0,
+        "userLongitude": 0.0
+    };
     getUserGeoLocation();
-    var userLatitude;
-    var userLongitude;
-    function getUserGeoLocation() {
-        if (navigator.geolocation)
-            navigator.geolocation.getCurrentPosition(function(position){
-                // console.log(position);
-                userLatitude = position.coords.latitude;
-                userLatitude = position.coords.longitude;
-            });
-        else
-            console.log("Geolocation is not supported");
-    }
 
     $(".result-card").hover(function () {
         $(this).css("box-shadow", "0 6px 20px 0 rgba(0, 0, 0, 0.19)");
@@ -215,6 +207,25 @@
     $(".result-card").mouseleave(function () {
         $(this).css("box-shadow", "0 4px 8px 0 rgba(0, 0, 0, 0.2)");
     });
+
+    function getUserGeoLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // console.log(position.coords.latitude);
+                userLocation["userLatitude"] = position.coords.latitude;
+                userLocation["userLongitude"] = position.coords.longitude;
+            })
+        }
+        else {
+            console.log("Geolocation is not supported");
+        }
+        loadTopEvents();
+    }
+
+    function loadTopEvents() {
+        console.log(userLocation);
+
+    }
 
     $("#search-but").click(function () {
         const activityOptions = document.querySelectorAll('input[name="activity-option"]');
@@ -244,6 +255,6 @@
             }
         }
 
-        window.location.href = "./Results.html?activity=" + selectedActivity + "&type=" + selectedType + "&location=" + selectedLocation;
+        // window.location.href = "./Results.html?activity=" + selectedActivity + "&type=" + selectedType + "&location=" + selectedLocation;
     });
 </script>
