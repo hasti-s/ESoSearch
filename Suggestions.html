@@ -194,15 +194,18 @@
 </html>
 
 <script>
-    geoFindMe();
-
-    function geoFindMe() {
+    getUserGeoLocation();
+    var userLatitude;
+    var userLongitude;
+    function getUserGeoLocation() {
         if (navigator.geolocation)
             navigator.geolocation.getCurrentPosition(function(position){
-                console.log(position);
+                // console.log(position);
+                userLatitude = position.coords.latitude;
+                userLatitude = position.coords.longitude;
             });
         else
-            console.log("geolocation is not supported");
+            console.log("Geolocation is not supported");
     }
 
     $(".result-card").hover(function () {
