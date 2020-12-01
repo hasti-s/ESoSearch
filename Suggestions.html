@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <title>ESoSearch</title>
 
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="portrait.css">
@@ -224,7 +225,6 @@
 
     function loadTopEvents() {
         console.log(userLocation);
-
     }
 
     $("#search-but").click(function () {
