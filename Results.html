@@ -90,7 +90,9 @@
               if(events[i]['description'] == null){
                 events[i]['description'] = "No Description Available. Click on this event to see more details";
               }
-              card_elements = document.getElementById("result"+i).children;
+              if (document.getElementById("result"+i) != null) {
+                card_elements = document.getElementById("result"+i).children;
+              }
               card_elements[0].innerHTML = events[i]['title'];
               card_elements[1].innerHTML = events[i]['description'];
               //console.log(events[i]['title']);
