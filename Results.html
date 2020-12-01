@@ -25,32 +25,32 @@
             <button type="button" class="btn btn-primary" name="search" id="change-but">Search</button>
         </div>
         <div class="result-card" id="result0">
-          <h4 class="title">Title</h4>
+          <h4 class="title"></h4>
           <p class="description"></p>
         </div>
         <div class="result-card" id="result1">
-          <h4 class="title">Title</h4>
+          <h4 class="title"></h4>
           <p class="description"></p>
         </div>
         <div class="result-card" id="result2">
-          <h4 class="title">Title</h4>
+          <h4 class="title"></h4>
           <p class="description"></p>
         </div>
         <div class="result-card" id="result3">
-          <h4 class="title">Title</h4>
+          <h4 class="title"></h4>
           <p class="description"></p>
         </div>
         <div class="more" id="more" style="display: none">
           <div class="result-card" id="result4">
-            <h4 class="title">Title</h4>
+            <h4 class="title"></h4>
             <p class="description"></p>
           </div>
           <div class="result-card" id="result5">
-            <h4 class="title">Title</h4>
+            <h4 class="title"></h4>
             <p class="description"></p>
           </div>
           <div class="result-card" id="result6">
-            <h4 class="title">Title</h4>
+            <h4 class="title"></h4>
             <p class="description"></p>
           </div>
         </div>
@@ -78,6 +78,7 @@
     //split the query words for api call
     apiQueryString = searchQuery[0].split(' ').join('+');
 
+
     const getData = () => {
         const xhr = new XMLHttpRequest();
         apiString = 'http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS' ;
@@ -94,17 +95,15 @@
               }
               if (document.getElementById("result"+i) != null) {
                 card_elements = document.getElementById("result"+i).children;
+                card_elements[0].innerHTML = events[i]['title'];
+                card_elements[1].innerHTML = events[i]['description'];
+
+                var urlTag = document.createElement('a');
+                urlTag.setAttribute('href',events[i]['url']);
+                urlTag.setAttribute('class',"stretched-link")
+                document.getElementById("result"+i).appendChild(urlTag);
               }
-              card_elements[0].innerHTML = events[i]['title'];
-              card_elements[1].innerHTML = events[i]['description'];
-              //console.log(events[i]['title']);
-              //console.log(events[i]['description']);
-              //console.log(events[i]['url']);
 
-              $(".result-card").click(function() {
-                  window.open(events[i]['url']);
-
-              });
             }
         };
         xhr.send();
@@ -124,6 +123,12 @@
     $(".result-card").mouseleave(function(){
         $(this).css("box-shadow", "0 4px 8px 0 rgba(0, 0, 0, 0.2)");
     });
+
+    $(".result-card").click(function(e) {
+      e.preventDefault();
+      window.open($(this).find("a").attr("href"));
+    });
+
 
     $("#change-but").click(function() {
         var query = document.getElementById("search-query-results").value;
