@@ -77,8 +77,15 @@
     let queryString = new URLSearchParams(paramString);
     var events;
 
+    console.log(paramString);
+
+    console.log(queryString);
     // Get the value of parameter key - query
     searchQuery = queryString.getAll("query");
+    searchActivity = queryString.getAll("activity");
+    searchType = queryString.getAll("type");
+    searchLocation = queryString.getAll("location");
+    
     // Set the value of input search query results textbox to the user's query
     console.log(searchQuery);
 
