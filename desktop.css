@@ -15,12 +15,18 @@
         font-size: 400%;
         margin-left: 80%;
         color: #DCDCDC;
+        cursor: pointer;
+        text-shadow: 1px 1px rgba(100, 100, 100, 0.7);
+
     }
 
 #home{
     font-size: 400%;
     /*margin-left: 20%;*/
     color: #DCDCDC;
+    cursor: pointer;
+    text-shadow: 1px 1px rgba(100, 100, 100, 0.7);
+
 }
 .icon-wrapper{
     display: flex;
@@ -157,7 +163,7 @@
     }
 
     .options{
-        display: flex;
+        /*display: flex;*/
         margin-bottom: 10px;
     }
 
