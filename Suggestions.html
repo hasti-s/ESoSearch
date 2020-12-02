@@ -327,7 +327,7 @@
                     }
                 }
             })
-        fetch('http://api.eventful.com/json/events/search?&category=attractions&location=' + coordinates + '&within=20date=Future&app_key=5dVs5WSgZ5GQ9smS')
+        fetch('http://api.eventful.com/json/events/search?&category=attractions&location=' + coordinates + '&within=20&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
                 $('.lds-roller').hide();

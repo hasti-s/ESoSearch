@@ -154,18 +154,28 @@
   let paramString = currentURL.split('?')[1];
   let queryString = new URLSearchParams(paramString);
   var events;
+  var apiQueryString, apiLocationString, apiCallString, searchQuery;
 
   // Get the value of parameter key - query
-  searchQuery = queryString.getAll("query");
-  // Set the value of input search query results textbox to the user's query
-  console.log(searchQuery);
+  //parse url from home page
+  if(queryString.has('query')){
+    searchQuery = queryString.get('query');
+    apiQueryString = searchQuery.split(' ').join('+');
+    apiCallString = 'http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS'
 
-  //split the query words for api call
-  apiQueryString = searchQuery[0].split(' ').join('+');
+  }
+  //parse url from suggestions
+  else {
 
+    searchQuery = queryString.get('activity');
+    apiLocationString = queryString.get('location');
+    if(apiLocationString == 'anywhere')
+      apiLocationString = 'Illinois';
+    apiCallString = 'http://api.eventful.com/json/events/search?&category=' + searchQuery + '&location=' + apiLocationString + '&within=20&date=Future&app_key=5dVs5WSgZ5GQ9smS'
+  }
 
   const getEvents = () => {
-    fetch('http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+    fetch(apiCallString)
       .then(res => res.json())
       .then(data => {
         $('.lds-roller').hide();
@@ -195,7 +205,7 @@
   }
 
   getEvents();
-  document.getElementById("search-query-results").value = searchQuery[0];
+  document.getElementById("search-query-results").value = searchQuery;
 
   $("#home").click(function () {
       window.location.href = "./index.html";
