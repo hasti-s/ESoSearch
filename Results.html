@@ -164,7 +164,7 @@
   apiQueryString = searchQuery[0].split(' ').join('+');
 
 
-  const getData = () => {
+  const getEvents = () => {
     fetch('http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
       .then(res => res.json())
       .then(data => {
@@ -172,7 +172,6 @@
         events = data['events']['event'];
         console.log(events);
         for (var i in events) {
-          //console.log(events[i]['description']);
           if (events[i]['description'] == null) {
             events[i]['description'] = "No Description Available. Click on this event to see more details";
           }
@@ -195,7 +194,7 @@
     moreResults.style.display = "block";
   }
 
-  getData();
+  getEvents();
   document.getElementById("search-query-results").value = searchQuery[0];
 
   $("#home").click(function () {
