@@ -42,6 +42,7 @@
     const recognition = new SpeechRecognition();
     var micStatus = 0;
     let transcript = '';
+    var apiLocationString;
     $("#did-you-say").hide();
     $("#home").click(function () {
         window.location.href = "./index.html";
@@ -85,9 +86,13 @@
                 removeButtons();
             });
             $("#acceptance-but").click(function(){
+                var currentURL = window.location.href;
+                let paramString = currentURL.split('?')[1];
+                let queryString = new URLSearchParams(paramString);
+                apiLocationString = queryString.get('location');
                 $("#did-you-say").hide();
                 // Pass the query to the results page
-                window.location.href = "./Results.html?query=" + transcript;
+                window.location.href = "./Results.html?query=" + transcript + "&location=" + apiLocationString;
             });
         }
         // Eventlistener to start listening the user query

@@ -159,8 +159,9 @@
   //parse url from home page
   if(queryString.has('query')){
     searchQuery = queryString.get('query');
+    apiLocationString = queryString.get('location');
     apiQueryString = searchQuery.split(' ').join('+');
-    apiCallString = 'http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS'
+    apiCallString = 'http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=' + apiLocationString + '&within=20&date=Future&app_key=5dVs5WSgZ5GQ9smS'
 
   }
   //parse url from suggestions
@@ -234,7 +235,7 @@
 
   $("#change-but").click(function () {
     var query = document.getElementById("search-query-results").value;
-    window.location.href = "./Results.html?query=" + query;
+    window.location.href = "./Results.html?query=" + query + "&location=" + apiLocationString;
 
   });
 
