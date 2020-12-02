@@ -137,8 +137,7 @@
         </div>
       </div>
       <div style="text-align: center;">
-        <button type="button" class="btn btn-primary" name="show-more" id="show-more" onclick="showMore()">Show
-          More</button>
+        <button type="button" class="btn btn-primary" name="show-more" id="show-more" onclick="showMore()" value="Show More">Show More</button>
       </div>
 
     </div>
@@ -201,7 +200,15 @@
 
   function showMore() {
     var moreResults = document.getElementById("more");
-    moreResults.style.display = "block";
+    var showMoreButton = document.getElementById("show-more");
+    if (moreResults.style.display === "none") {
+      moreResults.style.display = "block";
+      showMoreButton.innerHTML = "Show Less";
+
+    } else {
+      moreResults.style.display = "none";
+      showMoreButton.innerHTML = "Show More";
+    }
   }
 
   getEvents();
