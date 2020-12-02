@@ -349,7 +349,8 @@
 
                         var urlTag = document.createElement('a');
                         urlTag.setAttribute('href', events[i]['url']);
-                        urlTag.setAttribute('class', "stretched-link")
+                        urlTag.setAttribute('class', "stretched-link");
+                        urlTag.setAttribute('target', '_blank');
                         document.getElementById("result" + index).appendChild(urlTag);
                         index++;
                     }
@@ -377,7 +378,8 @@
 
                         var urlTag = document.createElement('a');
                         urlTag.setAttribute('href', events[i]['url']);
-                        urlTag.setAttribute('class', "stretched-link")
+                        urlTag.setAttribute('class', "stretched-link");
+                        urlTag.setAttribute('target', '_blank');
                         document.getElementById("result" + index).appendChild(urlTag);
                         index++;
                     }

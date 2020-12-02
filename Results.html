@@ -192,7 +192,8 @@
 
             var urlTag = document.createElement('a');
             urlTag.setAttribute('href', events[i]['url']);
-            urlTag.setAttribute('class', "stretched-link")
+            urlTag.setAttribute('class', "stretched-link");
+            urlTag.setAttribute('target', '_blank');
             document.getElementById("result" + i).appendChild(urlTag);
           }
         }
