@@ -16,7 +16,10 @@
 </head>
 <body>
 <!--<p>test 12 3</p>-->
-
+<div class="icon-wrapper">
+    <i class="fa fa-home" id="home"></i>
+    <i class="fa fa-question-circle" id="help"></i>
+</div>
 <div class="wrapper">
     <form id="search-bar">
         <label id="did-you-say">Is this what you said?</label>
@@ -40,6 +43,9 @@
     var micStatus = 0;
     let transcript = '';
     $("#did-you-say").hide();
+    $("#home").click(function () {
+        window.location.href = "./index.html";
+    });
     $("#mic").hover(function() {
         document.body.style.cursor = "pointer";
     });

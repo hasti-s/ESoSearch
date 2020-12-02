@@ -24,6 +24,10 @@
 </head>
 
 <body>
+<div class="icon-wrapper">
+    <i class="fa fa-home" id="home"></i>
+    <i class="fa fa-question-circle" id="help"></i>
+</div>
   <div class="wrapper">
     <div id="result-cards">
       <label id="query-results">Results for</label>
@@ -193,6 +197,11 @@
 
   getData();
   document.getElementById("search-query-results").value = searchQuery[0];
+
+  $("#home").click(function () {
+      window.location.href = "./index.html";
+  });
+
   $(".result-card").hover(function () {
     $(this).css("box-shadow", "0 6px 20px 0 rgba(0, 0, 0, 0.19)");
   });

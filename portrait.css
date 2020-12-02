@@ -7,6 +7,23 @@
 		margin: 10px;
 	}
 
+#help{
+	font-size: 200%;
+	margin-left: 80%;
+	color: #DCDCDC;
+}
+
+#home{
+	font-size: 200%;
+	/*margin-left: 20%;*/
+	color: #DCDCDC;
+}
+.icon-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 	.wrapper{
 		display: flex;
 		justify-content: center;
