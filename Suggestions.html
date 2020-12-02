@@ -288,6 +288,7 @@
         fetch('http://api.eventful.com/json/events/search?&category=animals&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
+                $('.lds-roller').hide();
                 events = data['events']['event'];
                 console.log(events);
                 var index = 0;
@@ -316,6 +317,7 @@
         fetch('http://api.eventful.com/json/events/search?&category=attractions&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
+                $('.lds-roller').hide();
                 events = data['events']['event'];
                 console.log(events);
                 var index = 2;
@@ -343,6 +345,7 @@
         fetch('http://api.eventful.com/json/events/search?&category=food&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
+                $('.lds-roller').hide();
                 events = data['events']['event'];
                 console.log(events);
                 var index = 4;
