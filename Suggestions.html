@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>ESoSearch</title>
 
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="portrait.css">
@@ -31,38 +31,38 @@
                     data-target="#customize-modal">Customize</button>
             </div>
             <br>
-            <label class="category-title">Top Comedy Events</label>
+            <label class="category-title">Top Animal/Pets Events</label>
             <div class="result-card" id="result0">
                 <h4 class="title"></h4>
                 <p class="description">
-                    <Description /p>
+                </p>
             </div>
             <div class="result-card" id="result1">
                 <h4 class="title"></h4>
                 <p class="description">
-                    <Description /p>
+                </p>
             </div>
-            <label class="category-title">Top Outdoor & Recreation Events</label>
+            <label class="category-title">Top Museum and Attraction Events</label>
             <div class="result-card" id="result2">
                 <h4 class="title"></h4>
                 <p class="description">
-                    <Description /p>
+                </p>
             </div>
             <div class="result-card" id="result3">
                 <h4 class="title"></h4>
                 <p class="description">
-                    <Description /p>
+                </p>
             </div>
             <label class="category-title">Top Food Events</label>
             <div class="result-card" id="result4">
                 <h4 class="title"></h4>
                 <p class="description">
-                    <Description /p>
+                </p>
             </div>
             <div class="result-card" id="result5">
                 <h4 class="title"></h4>
                 <p class="description">
-                    <Description /p>
+                </p>
             </div>
         </div>
     </div>
@@ -114,8 +114,8 @@
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="materialGroupExample6"
-                                name="activity-option" value="sports">
-                            <label class="form-check-label" for="materialGroupExample6">Sports</label>
+                                name="activity-option" value="animals">
+                            <label class="form-check-label" for="materialGroupExample6">Pets and Animals</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="activity-option"
@@ -224,7 +224,88 @@
     }
 
     function loadTopEvents() {
-        console.log(userLocation);
+        fetch('http://api.eventful.com/json/events/search?&category=animals&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+            .then(res => res.json())
+            .then(data => {
+                events = data['events']['event'];
+                console.log(events);
+                var index = 0;
+                for (var i in events) {
+                    // console.log(events[i]['description']);
+                    if (index > 1) {
+                        break;
+                    }
+                    if (events[i]['description'] == null) {
+                        events[i]['description'] = "No Description Available. Click on this event to see more details";
+                    }
+                    if (document.getElementById("result" + index) != null) {
+                        card_elements = document.getElementById("result" + index).children;
+                        card_elements[0].innerHTML = events[i]['title'];
+                        card_elements[1].innerHTML = events[i]['description'];
+
+                        var urlTag = document.createElement('a');
+                        urlTag.setAttribute('href', events[i]['url']);
+                        urlTag.setAttribute('class', "stretched-link");
+                        urlTag.setAttribute('target', '_blank');
+                        document.getElementById("result" + index).appendChild(urlTag);
+                        index++;
+                    }
+                }
+            })
+        fetch('http://api.eventful.com/json/events/search?&category=attractions&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+            .then(res => res.json())
+            .then(data => {
+                events = data['events']['event'];
+                console.log(events);
+                var index = 2;
+                for (var i in events) {
+                    // console.log(events[i]['description']);
+                    if (index > 3) {
+                        break;
+                    }
+                    if (events[i]['description'] == null) {
+                        events[i]['description'] = "No Description Available. Click on this event to see more details";
+                    }
+                    if (document.getElementById("result" + index) != null) {
+                        card_elements = document.getElementById("result" + index).children;
+                        card_elements[0].innerHTML = events[i]['title'];
+                        card_elements[1].innerHTML = events[i]['description'];
+
+                        var urlTag = document.createElement('a');
+                        urlTag.setAttribute('href', events[i]['url']);
+                        urlTag.setAttribute('class', "stretched-link")
+                        document.getElementById("result" + index).appendChild(urlTag);
+                        index++;
+                    }
+                }
+            })
+        fetch('http://api.eventful.com/json/events/search?&category=food&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+            .then(res => res.json())
+            .then(data => {
+                events = data['events']['event'];
+                console.log(events);
+                var index = 4;
+                for (var i in events) {
+                    // console.log(events[i]['description']);
+                    if (index > 5) {
+                        break;
+                    }
+                    if (events[i]['description'] == null) {
+                        events[i]['description'] = "No Description Available. Click on this event to see more details";
+                    }
+                    if (document.getElementById("result" + index) != null) {
+                        card_elements = document.getElementById("result" + index).children;
+                        card_elements[0].innerHTML = events[i]['title'];
+                        card_elements[1].innerHTML = events[i]['description'];
+
+                        var urlTag = document.createElement('a');
+                        urlTag.setAttribute('href', events[i]['url']);
+                        urlTag.setAttribute('class', "stretched-link")
+                        document.getElementById("result" + index).appendChild(urlTag);
+                        index++;
+                    }
+                }
+            })
     }
 
     $("#search-but").click(function () {
