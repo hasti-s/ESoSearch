@@ -183,35 +183,6 @@
           }
         }
       })
-
-    // const xhr = new XMLHttpRequest();
-    // apiString = 'http://api.eventful.com/json/events/search?&keywords=' + apiQueryString + '&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS' ;
-    // xhr.open('GET', apiString);
-    // xhr.responseType = 'json';
-    // xhr.onload = (response) => {
-    //   $('.lds-roller').hide();
-    //     const data = xhr.response;
-    //     events = data['events']['event'];
-    //     console.log(events);
-    //     for (var i in events) {
-    //       //console.log(events[i]['description']);
-    //       if(events[i]['description'] == null){
-    //         events[i]['description'] = "No Description Available. Click on this event to see more details";
-    //       }
-    //       if (document.getElementById("result"+i) != null) {
-    //         card_elements = document.getElementById("result"+i).children;
-    //         card_elements[0].innerHTML = events[i]['title'];
-    //         card_elements[1].innerHTML = events[i]['description'];
-
-    //         var urlTag = document.createElement('a');
-    //         urlTag.setAttribute('href',events[i]['url']);
-    //         urlTag.setAttribute('class',"stretched-link")
-    //         document.getElementById("result"+i).appendChild(urlTag);
-    //       }
-
-    //     }
-    // };
-    // xhr.send();
   }
 
   function showMore() {
