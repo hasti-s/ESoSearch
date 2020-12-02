@@ -180,7 +180,6 @@
       .then(data => {
         $('.lds-roller').hide();
         events = data['events']['event'];
-        console.log(events);
         for (var i in events) {
           if (events[i]['description'] == null) {
             events[i]['description'] = "No Description Available. Click on this event to see more details";

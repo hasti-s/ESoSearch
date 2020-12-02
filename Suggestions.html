@@ -282,7 +282,6 @@
     function getUserGeoLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                // console.log(position.coords.latitude);
                 userLocation["userLatitude"] = position.coords.latitude;
                 userLocation["userLongitude"] = position.coords.longitude;
             })
@@ -290,23 +289,19 @@
         else {
             console.log("Geolocation is not supported");
         }
-        console.log(userLocation);
         setTimeout(function(){ loadTopEvents(userLocation); }, 3000);
     }
 
     // Fetch Top events for each category
     function loadTopEvents(userLocation) {
-        console.log(userLocation);
         var coordinates = userLocation["userLatitude"].toString() + "," + userLocation["userLongitude"].toString();
         fetch('http://api.eventful.com/json/events/search?&category=animals&location=' + coordinates + '&within=20&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
                 $('.lds-roller').hide();
                 events = data['events']['event'];
-                console.log(events);
                 var index = 0;
                 for (var i in events) {
-                    // console.log(events[i]['description']);
                     if (index > 1) {
                         break;
                     }
@@ -332,10 +327,8 @@
             .then(data => {
                 $('.lds-roller').hide();
                 events = data['events']['event'];
-                console.log(events);
                 var index = 2;
                 for (var i in events) {
-                    // console.log(events[i]['description']);
                     if (index > 3) {
                         break;
                     }
@@ -361,10 +354,8 @@
             .then(data => {
                 $('.lds-roller').hide();
                 events = data['events']['event'];
-                console.log(events);
                 var index = 4;
                 for (var i in events) {
-                    // console.log(events[i]['description']);
                     if (index > 5) {
                         break;
                     }
@@ -416,7 +407,6 @@
             }
         }
 
-        console.log(userLocation);
         if (selectedLocation == 'nearby') {
             selectedLocation = userLocation["userLatitude"].toString() + "," + userLocation["userLongitude"].toString();
         }
