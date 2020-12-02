@@ -31,11 +31,11 @@
                     data-target="#customize-modal">Customize</button>
             </div>
             <br>
-            <label class="category-title">Top Animal/Pets Events</label>
+            <label class="category-title">Top Animal/Pets Events in your area</label>
             <div class="result-card" id="result0">
                 <h4 class="title"></h4>
                 <p class="description">
-                    p>
+                </p>
                 <div class="lds-roller">
                     <div></div>
                     <div></div>
@@ -62,7 +62,7 @@
                     <div></div>
                 </div>
             </div>
-            <label class="category-title">Top Museum and Attraction Events</label>
+            <label class="category-title">Top Museum and Attraction Events in your area</label>
             <div class="result-card" id="result2">
                 <h4 class="title"></h4>
                 <p class="description">
@@ -93,7 +93,7 @@
                     <div></div>
                 </div>
             </div>
-            <label class="category-title">Top Food Events</label>
+            <label class="category-title">Top Food Events in your area</label>
             <div class="result-card" id="result4">
                 <h4 class="title"></h4>
                 <p class="description">
@@ -270,6 +270,7 @@
         $(this).css("box-shadow", "0 4px 8px 0 rgba(0, 0, 0, 0.2)");
     });
 
+    // get User Geo Location for fetching events in their area
     function getUserGeoLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -281,11 +282,15 @@
         else {
             console.log("Geolocation is not supported");
         }
-        loadTopEvents();
+        console.log(userLocation);
+        setTimeout(function(){ loadTopEvents(userLocation); }, 3000);
     }
 
-    function loadTopEvents() {
-        fetch('http://api.eventful.com/json/events/search?&category=animals&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+    // Fetch Top events for each category
+    function loadTopEvents(userLocation) {
+        console.log(userLocation);
+        var coordinates = userLocation["userLatitude"].toString() + "," + userLocation["userLongitude"].toString();
+        fetch('http://api.eventful.com/json/events/search?&category=animals&location=' + coordinates + '&within=20&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
                 $('.lds-roller').hide();
@@ -314,7 +319,7 @@
                     }
                 }
             })
-        fetch('http://api.eventful.com/json/events/search?&category=attractions&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+        fetch('http://api.eventful.com/json/events/search?&category=attractions&location=' + coordinates + '&within=20date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
                 $('.lds-roller').hide();
@@ -342,7 +347,7 @@
                     }
                 }
             })
-        fetch('http://api.eventful.com/json/events/search?&category=food&location=Chicago&date=Future&app_key=5dVs5WSgZ5GQ9smS')
+        fetch('http://api.eventful.com/json/events/search?&category=food&location=' + coordinates + '&within=20&date=Future&app_key=5dVs5WSgZ5GQ9smS')
             .then(res => res.json())
             .then(data => {
                 $('.lds-roller').hide();
@@ -373,6 +378,7 @@
     }
 
     $("#search-but").click(function () {
+        // Get the checked radio buttons' values
         const activityOptions = document.querySelectorAll('input[name="activity-option"]');
         let selectedActivity;
         for (const aOption of activityOptions) {
@@ -400,6 +406,11 @@
             }
         }
 
-        // window.location.href = "./Results.html?activity=" + selectedActivity + "&type=" + selectedType + "&location=" + selectedLocation;
+        console.log(userLocation);
+        if (selectedLocation == 'nearby') {
+            selectedLocation = userLocation["userLatitude"].toString() + "," + userLocation["userLongitude"].toString();
+        }
+
+        window.location.href = "./Results.html?activity=" + selectedActivity + "&type=" + selectedType + "&location=" + selectedLocation;
     });
 </script>
