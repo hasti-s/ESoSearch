@@ -32,6 +32,10 @@ To view the mobile version of the application please follow these steps:
     For Windows
     > Ctrl + Shift + M
     
+### Known Issues
+
+* When running the application from local, the geo-location feature might not be able to fetch the location in the first time. Please reload the application to fix the issue.
+* The API does not work when running on mobile devices due to permissions on mobile devices, when hosted on a proper server the API would be able to fetch results as seen on browser in desktop at the moment. Hence please use the above methods to view the mobile version of the app.
     
 ### Technologies Used
 
