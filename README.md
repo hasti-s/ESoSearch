@@ -11,6 +11,7 @@ EsoSearch is a mobile web application to help older adults look for social event
 
 __Make sure to have Cross-origin resource sharing enabled. We recommend using [CORS Unblock plugin](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en).__ 
 
+When running the application locally, fetching user location might not work perfectly (it's a JavaScript issue). It's recommended to view it when hosted on a server [here.](https://adudih2.people.uic.edu/p/ESoSearch/)
 ## View the Mobile Version
 
 To view the mobile version of the application please follow these steps:
@@ -33,8 +34,6 @@ To view the mobile version of the application please follow these steps:
     > Ctrl + Shift + M
     
 ### Known Issues
-
-* When running the application from local, the geo-location feature might not be able to fetch the location in the first time. Please reload the application to fix the issue.
 * The API does not work when running on mobile devices due to permissions on mobile devices, when hosted on a proper server the API would be able to fetch results as seen on browser in desktop at the moment. Hence please use the above methods to view the mobile version of the app.
     
 ### Technologies Used
