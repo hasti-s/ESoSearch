@@ -18,18 +18,18 @@ To view the mobile version of the application please follow these steps:
 1. Run the application in either of the above mentioned ways using Chrome browser 
 2. Open Developer Tools using F12, OR use following shortcuts
 
-For MacOS
-> Command + Option + J
+    For MacOS
+    > Command + Option + J
 
-For Windows
-> Ctrl + Shift + J
+    For Windows
+    > Ctrl + Shift + J
 
 3. Click on the toggle device icon (mobile and ipad) on the top left of the developer panel, OR use following shortcuts
 
-For MacOS
-> Command + Shift + M
+    For MacOS
+    > Command + Shift + M
 
-For Windows
-> Ctrl + Shift + M
+    For Windows
+    > Ctrl + Shift + M
 
 For complete details on design and development of this project please visit the project website at: https://sites.google.com/view/esosearch/motivations
