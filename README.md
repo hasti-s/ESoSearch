@@ -31,5 +31,16 @@ To view the mobile version of the application please follow these steps:
 
     For Windows
     > Ctrl + Shift + M
+    
+    
+### Technologies Used
+
+* Hypertext Markup Language (HTML)
+* Cascading Style Sheets (CSS)
+* Bootstrap 
+* jQuery
+* JavaScript
 
 For complete details on design and development of this project please visit the project website [here](https://sites.google.com/view/esosearch/motivations).
+
+
