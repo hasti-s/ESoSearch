@@ -9,7 +9,9 @@ EsoSearch is a mobile web application to help older adults look for social event
 
 * In order to run the project locally, please open index.html file with Chrome browser. 
 
->Make sure to have Cross-origin resource sharing enabled. We recommend using CORS Unblock plugin for Chrome available at https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en
+> **Make sure to have Cross-origin resource sharing enabled. We recommend using CORS Unblock plugin for Chrome available ** at https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en 
+
+## View the Mobile Version
 
 To view the mobile version of the application please follow these steps:
 
