@@ -5,7 +5,7 @@ EsoSearch is a mobile web application to help older adults look for social event
 
 ## Running the application
 
-* Visit the application's latest version hosted [here](https://adudih2.people.uic.edu/p/ESoSearch/).
+* Visit the application's hosted [here](https://adudih2.people.uic.edu/p/ESoSearch/).
 
 * In order to run the project locally, please open index.html file with Chrome browser. 
 
