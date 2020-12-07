@@ -5,11 +5,11 @@ EsoSearch is a mobile web application to help older adults look for social event
 
 ## Running the application
 
-* Visit the application's latest version hosted at https://adudih2.people.uic.edu/p/ESoSearch/
+* Visit the application's latest version hosted [here](https://adudih2.people.uic.edu/p/ESoSearch/).
 
 * In order to run the project locally, please open index.html file with Chrome browser. 
 
-__Make sure to have Cross-origin resource sharing enabled. We recommend using CORS Unblock plugin for Chrome available at https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en__
+__Make sure to have Cross-origin resource sharing enabled. We recommend using [CORS Unblock plugin](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en).__ 
 
 ## View the Mobile Version
 
@@ -32,4 +32,4 @@ To view the mobile version of the application please follow these steps:
     For Windows
     > Ctrl + Shift + M
 
-For complete details on design and development of this project please visit the project website at: https://sites.google.com/view/esosearch/motivations
+For complete details on design and development of this project please visit the project website [here](https://sites.google.com/view/esosearch/motivations).
